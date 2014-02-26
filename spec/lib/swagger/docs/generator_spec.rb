@@ -18,6 +18,7 @@ describe Swagger::Docs::Generator do
 
   before(:each) do
     FileUtils.rm_rf(TMP_DIR)
+    stub_const('ActionController::Base', ApplicationController)
   end
 
   let(:routes) {[
