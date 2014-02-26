@@ -47,7 +47,7 @@ module Swagger
           status_code = Rack::Utils.status_code(status)
           response_messages << {:code => status_code, :message => text || status.to_s.titleize}
         else
-          response_messages << {:code => status, :message => text}
+          response_messages << {:code => status, :message => text, :model => model}
         end
         response_messages.sort_by!{|i| i[:code]}
       end
